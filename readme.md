@@ -10,7 +10,7 @@ The `quote` API is basically a pass through of the Finnhub Stock quote API with 
 
 The project is intended to be a simple example of how to expose API endpoints and map and aggregate data in Amplify Integration.
 
-An OpenAPI 3.0 doc is provided as well.
+An OpenAPI 3.0 doc is provided as well
 
 ## Quote
 
