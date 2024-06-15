@@ -1,0 +1,227 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0",
+    "title": "stock",
+    "description": "US Stock quote and watch list API"
+  },
+  "servers": [
+    {
+      "url": "{{YOUR AI URL}}",
+      "description": "AI"
+    }
+  ],
+  "paths": {
+    "/quote": {
+      "get": {
+        "summary": "Get Quote",
+        "description": "Get the stock quote for a given symbol",
+        "operationId": "get-stock-quote",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "query",
+            "description": "Stock symbol",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "AAPL"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quote"
+                },
+                "examples": {
+                  "AAPL": {
+                    "value": {
+                      "ChangePercent": -1.2462649,
+                      "Price": 211.57,
+                      "Change": -2.6699982,
+                      "DayHigh": 215.17,
+                      "DayLow": 211.3,
+                      "Volume": 55039753,
+                      "Name": "Apple Inc.",
+                      "Symbol": "AAPL",
+                      "FiftyTwoWeekLow": 164.08,
+                      "FiftyTwoWeekHigh": 220.2,
+                      "MarketCap": 3244235685888,
+                      "DividendYield": 0.47
+                    }
+                  },
+                  "TXN": {
+                    "value": {
+                      "ChangePercent": -1.212556,
+                      "Price": 193.9,
+                      "Change": -2.380005,
+                      "DayHigh": 195.6275,
+                      "DayLow": 193.07,
+                      "Volume": 3286353,
+                      "Symbol": "TXN",
+                      "FiftyTwoWeekLow": 139.48,
+                      "FiftyTwoWeekHigh": 206,
+                      "MarketCap": 176542449664,
+                      "DividendYield": 2.65
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
+            "description": "AI"
+          }
+        ]
+      }
+    },
+    "/watchlist": {
+      "get": {
+        "summary": "Get watchlist",
+        "description": "Get watch list based on comma separated list of symbols",
+        "operationId": "get-watchlist",
+        "parameters": [
+          {
+            "name": "symbols",
+            "in": "query",
+            "description": "comma separated list of symbols",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "INTC,TXN,AAPL"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Quote"
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": [
+                      {
+                        "ChangePercent": -0.8168409,
+                        "Price": 212.49,
+                        "Change": -1.75,
+                        "Volume": 65802837,
+                        "Symbol": "AAPL",
+                        "Name": "Apple"
+                      },
+                      {
+                        "ChangePercent": -0.03282443,
+                        "Price": 30.45,
+                        "Change": -0.0099983215,
+                        "Volume": 26217798,
+                        "Symbol": "INTC",
+                        "Name": "Intel"
+                      },
+                      {
+                        "ChangePercent": -1.212556,
+                        "Price": 193.9,
+                        "Change": -2.380005,
+                        "Volume": 3286353,
+                        "Symbol": "TXN",
+                        "Name": "Intel"
+                      },
+                      {
+                        "ChangePercent": 1.7514113,
+                        "Price": 131.88,
+                        "Change": 2.2700043,
+                        "Volume": 297485100,
+                        "Symbol": "NVDA",
+                        "Name": "NVIDIA"
+                      },
+                      {
+                        "ChangePercent": -0.09247575,
+                        "Price": 183.66,
+                        "Change": -0.16999817,
+                        "Volume": 21388177,
+                        "Symbol": "AMZN",
+                        "Name": "Amazon.com"
+                      },
+                      {
+                        "ChangePercent": 0.22419964,
+                        "Price": 442.57,
+                        "Change": 0.99002075,
+                        "Volume": 12104244,
+                        "Symbol": "MSFT",
+                        "Name": "Microsoft"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
+            "description": "AI"
+          }
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "StockQuote"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Quote": {
+        "type": "object",
+        "description": "Qupte",
+        "properties": {
+          "Price": {
+            "type": "number"
+          },
+          "Change": {
+            "type": "number"
+          },
+          "ChangePercent": {
+            "type": "number"
+          },
+          "DayHigh": {
+            "type": "number"
+          },
+          "DayLow": {
+            "type": "number"
+          },
+          "OpenPrice": {
+            "type": "number"
+          },
+          "PreviousClose": {
+            "type": "number"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "Price": 212.49,
+            "Change": -1.75,
+            "ChangePercent": -0.8168,
+            "DayHigh": 215.17,
+            "DayLow": 211.3,
+            "OpenPrice": 213.81,
+            "PreviousClose": 214.24
+          }
+        }
+      }
+    }
+  }
+}
