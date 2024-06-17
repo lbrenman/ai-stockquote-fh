@@ -107,7 +107,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Quote"
+                    "$ref": "#/components/schemas/WatchListItem"
                   }
                 },
                 "examples": {
@@ -186,7 +186,6 @@
     "schemas": {
       "Quote": {
         "type": "object",
-        "description": "Qupte",
         "properties": {
           "Price": {
             "type": "number"
@@ -208,17 +207,59 @@
           },
           "PreviousClose": {
             "type": "number"
+          },
+          "Symbol": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
           }
         },
         "x-examples": {
-          "Example 1": {
+          "AAPL": {
             "Price": 212.49,
             "Change": -1.75,
             "ChangePercent": -0.8168,
             "DayHigh": 215.17,
             "DayLow": 211.3,
             "OpenPrice": 213.81,
-            "PreviousClose": 214.24
+            "PreviousClose": 214.24,
+            "Symbol": "AAPL",
+            "Name": "Apple Inc"
+          }
+        }
+      },
+      "WatchListItem": {
+        "type": "object",
+        "description": "Watch List Item",
+        "properties": {
+          "Symbol": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Logo": {
+            "type": "string"
+          },
+          "ChangePercent": {
+            "type": "number"
+          },
+          "Price": {
+            "type": "number"
+          },
+          "Change": {
+            "type": "number"
+          }
+        },
+        "x-examples": {
+          "AAPL": {
+            "Symbol": "AAPL",
+            "Name": "Apple Inc.",
+            "Logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AAPL.png",
+            "ChangePercent": -1.1023977,
+            "Price": 211.8783,
+            "Change": -2.3617096
           }
         }
       }

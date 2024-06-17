@@ -24,7 +24,9 @@ An OpenAPI 3.0 doc is provided as well
   "DayHigh": 215.17,
   "DayLow": 211.3,
   "OpenPrice": 213.81,
-  "PreviousClose": 214.24
+  "PreviousClose": 214.24,
+  "Symbol": "AAPL",
+  "Name": "Apple Inc"
 }
 ```
 
@@ -33,60 +35,66 @@ An OpenAPI 3.0 doc is provided as well
 * `GET /watchlist?symbols=AAPL,INTC,TXN,NVDA,AMZN,MSFT`
 
 ```json
+{
+  "Price": 212.49,
+  "Change": -1.75,
+  "ChangePercent": -0.8168,
+  "DayHigh": 215.17,
+  "DayLow": 211.3,
+  "OpenPrice": 213.81,
+  "PreviousClose": 214.24,
+  "Symbol": "AAPL",
+  "Name": "Apple Inc"
+}
+```
+
+```bash
+curl https://demo-design.sandbox.ampint.axwaytest.net:9443/watchlist?symbols=AAPL,INTC,TXN,NVDA,AMZN,MSFT
+```
+
+```json
 [
   {
-    "Price": 212.49,
     "Change": -1.75,
     "ChangePercent": -0.8168,
-    "DayHigh": 215.17,
-    "DayLow": 211.3,
-    "OpenPrice": 213.81,
-    "PreviousClose": 214.24
+    "Price": 212.49,
+    "Symbol": "AAPL",
+    "Name": "Apple Inc"
   },
   {
-    "Price": 30.45,
     "Change": -0.01,
     "ChangePercent": -0.0328,
-    "DayHigh": 30.56,
-    "DayLow": 30.23,
-    "OpenPrice": 30.285,
-    "PreviousClose": 30.46
+    "Price": 30.45,
+    "Symbol": "INTC",
+    "Name": "Intel Corp"
   },
   {
-    "Price": 193.9,
     "Change": -2.38,
     "ChangePercent": -1.2126,
-    "DayHigh": 195.6275,
-    "DayLow": 193.07,
-    "OpenPrice": 193.84,
-    "PreviousClose": 196.28
+    "Price": 193.9,
+    "Symbol": "TXN",
+    "Name": "Texas Instruments Inc"
   },
   {
-    "Price": 131.88,
     "Change": 2.27,
     "ChangePercent": 1.7514,
-    "DayHigh": 132.835,
-    "DayLow": 128.32,
-    "OpenPrice": 129.94,
-    "PreviousClose": 129.61
+    "Price": 131.88,
+    "Symbol": "NVDA",
+    "Name": "NVIDIA Corp"
   },
   {
-    "Price": 183.66,
     "Change": -0.17,
     "ChangePercent": -0.0925,
-    "DayHigh": 183.72,
-    "DayLow": 182.23,
-    "OpenPrice": 182.99,
-    "PreviousClose": 183.83
+    "Price": 183.66,
+    "Symbol": "AMZN",
+    "Name": "Amazon.com Inc"
   },
   {
-    "Price": 442.57,
     "Change": 0.99,
     "ChangePercent": 0.2242,
-    "DayHigh": 443.1376,
-    "DayLow": 436.721,
-    "OpenPrice": 438.42,
-    "PreviousClose": 441.58
+    "Price": 442.57,
+    "Symbol": "MSFT",
+    "Name": "Microsoft Corp"
   }
 ]
 ```
