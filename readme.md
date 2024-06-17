@@ -16,6 +16,8 @@ An OpenAPI 3.0 doc is provided as well
 
 `GET /quote?symbol=AAPL`
 
+200 response:
+
 ```json
 {
   "Price": 212.49,
@@ -29,28 +31,14 @@ An OpenAPI 3.0 doc is provided as well
   "Name": "Apple Inc"
 }
 ```
+
+Should return 204 on bad sysmbol
 
 ## Watchlist
 
 * `GET /watchlist?symbols=AAPL,INTC,TXN,NVDA,AMZN,MSFT`
 
-```json
-{
-  "Price": 212.49,
-  "Change": -1.75,
-  "ChangePercent": -0.8168,
-  "DayHigh": 215.17,
-  "DayLow": 211.3,
-  "OpenPrice": 213.81,
-  "PreviousClose": 214.24,
-  "Symbol": "AAPL",
-  "Name": "Apple Inc"
-}
-```
-
-```bash
-curl https://demo-design.sandbox.ampint.axwaytest.net:9443/watchlist?symbols=AAPL,INTC,TXN,NVDA,AMZN,MSFT
-```
+200 response:
 
 ```json
 [
@@ -98,6 +86,9 @@ curl https://demo-design.sandbox.ampint.axwaytest.net:9443/watchlist?symbols=AAP
   }
 ]
 ```
+
+Bad symbols will not be added to array response
+If all symbols are bad, then you will get a 204
 
 ## Installation
 
