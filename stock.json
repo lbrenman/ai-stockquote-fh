@@ -3,12 +3,22 @@
   "info": {
     "version": "1.0",
     "title": "stock",
-    "description": "US Stock quote and watch list API\n\nExample stock symbols to use:\n- AAPL\n- INTC\n- AMZN\n- TXN\n- NVDA\n- MSFT\n- TSAL"
+    "description": "US Stock quote and watch list API\n\nExample stock symbols to use:\nAAPL, INTC, AMZN, TXN, NVDA, MSFT, TSLA",
+    "termsOfService": "https://github.com/lbrenman",
+    "contact": {
+      "name": "Leor Brenman",
+      "url": "https://github.com/lbrenman",
+      "email": "lbrenman99@hotmail.com"
+    },
+    "license": {
+      "url": "https://github.com/lbrenman",
+      "name": "N/A"
+    }
   },
   "servers": [
     {
-      "url": "{{YOUR AI URL}}",
-      "description": "AI"
+      "url": "{{YOU AI URL}}",
+      "description": "Amplify Integration"
     }
   ],
   "paths": {
@@ -40,33 +50,67 @@
                 "examples": {
                   "AAPL": {
                     "value": {
-                      "ChangePercent": -1.2462649,
-                      "Price": 211.57,
-                      "Change": -2.6699982,
-                      "DayHigh": 215.17,
-                      "DayLow": 211.3,
-                      "Volume": 55039753,
-                      "Name": "Apple Inc.",
+                      "Price": 210.62,
+                      "Change": -3.48,
+                      "ChangePercent": -1.6254,
+                      "DayHigh": 216.07,
+                      "DayLow": 210.3,
+                      "OpenPrice": 215.805,
+                      "PreviousClose": 214.1,
                       "Symbol": "AAPL",
-                      "FiftyTwoWeekLow": 164.08,
-                      "FiftyTwoWeekHigh": 220.2,
-                      "MarketCap": 3244235685888,
-                      "DividendYield": 0.47
+                      "Name": "Apple Inc"
                     }
                   },
                   "TXN": {
                     "value": {
-                      "ChangePercent": -1.212556,
-                      "Price": 193.9,
-                      "Change": -2.380005,
-                      "DayHigh": 195.6275,
-                      "DayLow": 193.07,
-                      "Volume": 3286353,
+                      "Price": 194.53,
+                      "Change": 1.1,
+                      "ChangePercent": 0.5687,
+                      "DayHigh": 197.89,
+                      "DayLow": 193.5,
+                      "OpenPrice": 194.15,
+                      "PreviousClose": 193.43,
                       "Symbol": "TXN",
-                      "FiftyTwoWeekLow": 139.48,
-                      "FiftyTwoWeekHigh": 206,
-                      "MarketCap": 176542449664,
-                      "DividendYield": 2.65
+                      "Name": "Texas Instruments Inc"
+                    }
+                  },
+                  "INTC": {
+                    "value": {
+                      "Price": 30.97,
+                      "Change": 0.38,
+                      "ChangePercent": 1.2422,
+                      "DayHigh": 31.31,
+                      "DayLow": 30.72,
+                      "OpenPrice": 30.769,
+                      "PreviousClose": 30.59,
+                      "Symbol": "INTC",
+                      "Name": "Intel Corp"
+                    }
+                  },
+                  "AMZN": {
+                    "value": {
+                      "Price": 193.25,
+                      "Change": -4.6,
+                      "ChangePercent": -2.325,
+                      "DayHigh": 198.85,
+                      "DayLow": 192.5,
+                      "OpenPrice": 197.75,
+                      "PreviousClose": 197.85,
+                      "Symbol": "AMZN",
+                      "Name": "Amazon.com Inc"
+                    }
+                  },
+                  "T": {
+                    "value": {
+                      "Price": 19.11,
+                      "Change": 0.36,
+                      "ChangePercent": 1.92,
+                      "DayHigh": 19.13,
+                      "DayLow": 18.78,
+                      "OpenPrice": 18.8,
+                      "PreviousClose": 18.75,
+                      "Symbol": "T",
+                      "Name": "AT&T Inc"
                     }
                   }
                 }
@@ -165,6 +209,66 @@
                         "Name": "Microsoft"
                       }
                     ]
+                  },
+                  "Example 2": {
+                    "value": [
+                      {
+                        "Price": 63.65,
+                        "Change": -0.26,
+                        "ChangePercent": -0.4068,
+                        "Symbol": "KO",
+                        "Name": "Coca-Cola Co"
+                      },
+                      {
+                        "Price": 115.12,
+                        "Change": 0.22,
+                        "ChangePercent": 0.1915,
+                        "Symbol": "XOM",
+                        "Name": "Exxon Mobil Corp"
+                      },
+                      {
+                        "Price": 452.32,
+                        "Change": 6.36,
+                        "ChangePercent": 1.4261,
+                        "Symbol": "GS",
+                        "Name": "Goldman Sachs Group Inc"
+                      },
+                      {
+                        "Price": 504.22,
+                        "Change": -15.34,
+                        "ChangePercent": -2.9525,
+                        "Symbol": "META",
+                        "Name": "Meta Platforms Inc"
+                      },
+                      {
+                        "Price": 446.95,
+                        "Change": -5.9,
+                        "ChangePercent": -1.3029,
+                        "Symbol": "MSFT",
+                        "Name": "Microsoft Corp"
+                      },
+                      {
+                        "Price": 193.25,
+                        "Change": -4.6,
+                        "ChangePercent": -2.325,
+                        "Symbol": "AMZN",
+                        "Name": "Amazon.com Inc"
+                      }
+                    ]
+                  },
+                  "Example 3": {
+                    "value": [
+                      {
+                        "Price": 19.11,
+                        "Change": 0.36,
+                        "ChangePercent": 1.92,
+                        "Symbol": "T",
+                        "Name": "AT&T Inc"
+                      }
+                    ]
+                  },
+                  "Example 4": {
+                    "value": []
                   }
                 }
               }
