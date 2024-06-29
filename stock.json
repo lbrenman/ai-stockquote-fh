@@ -17,8 +17,16 @@
   },
   "servers": [
     {
-      "url": "{{YOU AI URL}}",
+      "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
       "description": "Amplify Integration"
+    },
+    {
+      "url": "http://localhost:8080/api",
+      "description": "API Builder local"
+    },
+    {
+      "url": "https://rfs171vx6c.execute-api.us-east-1.amazonaws.com/Prod",
+      "description": "AWS API GW"
     }
   ],
   "paths": {
@@ -124,7 +132,15 @@
         "servers": [
           {
             "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
-            "description": "AI"
+            "description": "Amplify Integration"
+          },
+          {
+            "url": "http://localhost:8080/api",
+            "description": "API Builder local"
+          },
+          {
+            "url": "https://rfs171vx6c.execute-api.us-east-1.amazonaws.com/Prod",
+            "description": "AWS API GW"
           }
         ]
       }
@@ -281,7 +297,15 @@
         "servers": [
           {
             "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
-            "description": "AI"
+            "description": "Amplify Integration"
+          },
+          {
+            "url": "http://localhost:8080/api",
+            "description": "API Builder local"
+          },
+          {
+            "url": "https://rfs171vx6c.execute-api.us-east-1.amazonaws.com/Prod",
+            "description": "AWS API GW"
           }
         ]
       }
