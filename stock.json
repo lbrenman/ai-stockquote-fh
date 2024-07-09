@@ -15,20 +15,6 @@
       "name": "N/A"
     }
   },
-  "servers": [
-    {
-      "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
-      "description": "Amplify Integration"
-    },
-    {
-      "url": "http://localhost:8080/api",
-      "description": "API Builder local"
-    },
-    {
-      "url": "https://rfs171vx6c.execute-api.us-east-1.amazonaws.com/Prod",
-      "description": "AWS API GW"
-    }
-  ],
   "paths": {
     "/quote": {
       "get": {
@@ -141,6 +127,10 @@
           {
             "url": "https://rfs171vx6c.execute-api.us-east-1.amazonaws.com/Prod",
             "description": "AWS API GW"
+          },
+          {
+            "url": "https://stockquotefh.fly.dev/api",
+            "description": "API Builder on Fly.io"
           }
         ]
       }
@@ -306,6 +296,10 @@
           {
             "url": "https://rfs171vx6c.execute-api.us-east-1.amazonaws.com/Prod",
             "description": "AWS API GW"
+          },
+          {
+            "url": "https://stockquotefh.fly.dev/api",
+            "description": "API Builder on Fly.io"
           }
         ]
       }
