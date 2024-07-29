@@ -114,25 +114,7 @@
           "204": {
             "description": "No Content, bad symbol"
           }
-        },
-        "servers": [
-          {
-            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
-            "description": "Amplify Integration"
-          },
-          {
-            "url": "http://localhost:8080/api",
-            "description": "API Builder local"
-          },
-          {
-            "url": "https://rfs171vx6c.execute-api.us-east-1.amazonaws.com/Prod",
-            "description": "AWS API GW"
-          },
-          {
-            "url": "https://stockquotefh.fly.dev/api",
-            "description": "API Builder on Fly.io"
-          }
-        ]
+        }
       }
     },
     "/watchlist": {
@@ -283,25 +265,7 @@
           "204": {
             "description": "No Content, all bad symbols"
           }
-        },
-        "servers": [
-          {
-            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
-            "description": "Amplify Integration"
-          },
-          {
-            "url": "http://localhost:8080/api",
-            "description": "API Builder local"
-          },
-          {
-            "url": "https://rfs171vx6c.execute-api.us-east-1.amazonaws.com/Prod",
-            "description": "AWS API GW"
-          },
-          {
-            "url": "https://stockquotefh.fly.dev/api",
-            "description": "API Builder on Fly.io"
-          }
-        ]
+        }
       }
     }
   },
