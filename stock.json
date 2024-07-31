@@ -18,6 +18,9 @@
   "paths": {
     "/quote": {
       "get": {
+        "tags": [
+          "StockQuote"
+        ],
         "summary": "Get Quote",
         "description": "Get the stock quote for a given symbol",
         "operationId": "get-stock-quote",
@@ -114,11 +117,20 @@
           "204": {
             "description": "No Content, bad symbol"
           }
-        }
+        },
+        "servers": [
+          {
+            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
+            "description": "AI"
+          }
+        ]
       }
     },
     "/watchlist": {
       "get": {
+        "tags": [
+          "StockQuote"
+        ],
         "summary": "Get watchlist",
         "description": "Get watch list based on comma separated list of symbols",
         "operationId": "get-watchlist",
@@ -265,7 +277,13 @@
           "204": {
             "description": "No Content, all bad symbols"
           }
-        }
+        },
+        "servers": [
+          {
+            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
+            "description": "AI"
+          }
+        ]
       }
     }
   },
