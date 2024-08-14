@@ -32,7 +32,7 @@ An OpenAPI 3.0 doc is provided as well
 }
 ```
 
-Should return 204 on bad sysmbol
+Returns 204 on bad symbol and 500 on Finnhub API call error
 
 ## Watchlist
 
@@ -88,7 +88,8 @@ Should return 204 on bad sysmbol
 ```
 
 Bad symbols will not be added to array response
-If all symbols are bad, then you will get a 204
+Returns 204 if all symbols are bad
+Returns 500 on Finnhub API call error
 
 ## Installation
 
