@@ -8,7 +8,7 @@ The project exposes two end points
 
 The `quote` API is basically a pass through of the Finnhub Stock quote API with a field mapped payload. It takes a single symbol as a query parameter. The `watchlist` API returns an array of stock quotes suitable for a watch list. It takes a comma separated list of symbols.
 
-The project is intended to be a simple example of how to expose API endpoints and map and aggregate data in Amplify Integration.
+The project is intended to be a simple example of how to expose API endpoints and map and aggregate data in Amplify Integration using HTTP Server and API Server methods.
 
 An OpenAPI 3.0 doc is provided as well
 
