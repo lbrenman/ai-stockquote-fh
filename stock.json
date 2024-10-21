@@ -48,72 +48,82 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Quote"
+                  "$ref": "#/components/schemas/QuoteResponse"
                 },
                 "examples": {
                   "AAPL": {
                     "value": {
-                      "Price": 210.62,
-                      "Change": -3.48,
-                      "ChangePercent": -1.6254,
-                      "DayHigh": 216.07,
-                      "DayLow": 210.3,
-                      "OpenPrice": 215.805,
-                      "PreviousClose": 214.1,
-                      "Symbol": "AAPL",
-                      "Name": "Apple Inc"
+                      "Quote": {
+                        "Price": 210.62,
+                        "Change": -3.48,
+                        "ChangePercent": -1.6254,
+                        "DayHigh": 216.07,
+                        "DayLow": 210.3,
+                        "OpenPrice": 215.805,
+                        "PreviousClose": 214.1,
+                        "Symbol": "AAPL",
+                        "Name": "Apple Inc"
+                      }
                     }
                   },
                   "TXN": {
                     "value": {
-                      "Price": 194.53,
-                      "Change": 1.1,
-                      "ChangePercent": 0.5687,
-                      "DayHigh": 197.89,
-                      "DayLow": 193.5,
-                      "OpenPrice": 194.15,
-                      "PreviousClose": 193.43,
-                      "Symbol": "TXN",
-                      "Name": "Texas Instruments Inc"
+                      "Quote": {
+                        "Price": 194.53,
+                        "Change": 1.1,
+                        "ChangePercent": 0.5687,
+                        "DayHigh": 197.89,
+                        "DayLow": 193.5,
+                        "OpenPrice": 194.15,
+                        "PreviousClose": 193.43,
+                        "Symbol": "TXN",
+                        "Name": "Texas Instruments Inc"
+                      }
                     }
                   },
                   "INTC": {
                     "value": {
-                      "Price": 30.97,
-                      "Change": 0.38,
-                      "ChangePercent": 1.2422,
-                      "DayHigh": 31.31,
-                      "DayLow": 30.72,
-                      "OpenPrice": 30.769,
-                      "PreviousClose": 30.59,
-                      "Symbol": "INTC",
-                      "Name": "Intel Corp"
+                      "Quote": {
+                        "Price": 30.97,
+                        "Change": 0.38,
+                        "ChangePercent": 1.2422,
+                        "DayHigh": 31.31,
+                        "DayLow": 30.72,
+                        "OpenPrice": 30.769,
+                        "PreviousClose": 30.59,
+                        "Symbol": "INTC",
+                        "Name": "Intel Corp"
+                      }
                     }
                   },
                   "AMZN": {
                     "value": {
-                      "Price": 193.25,
-                      "Change": -4.6,
-                      "ChangePercent": -2.325,
-                      "DayHigh": 198.85,
-                      "DayLow": 192.5,
-                      "OpenPrice": 197.75,
-                      "PreviousClose": 197.85,
-                      "Symbol": "AMZN",
-                      "Name": "Amazon.com Inc"
+                      "Quote": {
+                        "Price": 193.25,
+                        "Change": -4.6,
+                        "ChangePercent": -2.325,
+                        "DayHigh": 198.85,
+                        "DayLow": 192.5,
+                        "OpenPrice": 197.75,
+                        "PreviousClose": 197.85,
+                        "Symbol": "AMZN",
+                        "Name": "Amazon.com Inc"
+                      }
                     }
                   },
                   "T": {
                     "value": {
-                      "Price": 19.11,
-                      "Change": 0.36,
-                      "ChangePercent": 1.92,
-                      "DayHigh": 19.13,
-                      "DayLow": 18.78,
-                      "OpenPrice": 18.8,
-                      "PreviousClose": 18.75,
-                      "Symbol": "T",
-                      "Name": "AT&T Inc"
+                      "Quote": {
+                        "Price": 19.11,
+                        "Change": 0.36,
+                        "ChangePercent": 1.92,
+                        "DayHigh": 19.13,
+                        "DayLow": 18.78,
+                        "OpenPrice": 18.8,
+                        "PreviousClose": 18.75,
+                        "Symbol": "T",
+                        "Name": "AT&T Inc"
+                      }
                     }
                   }
                 }
@@ -131,10 +141,33 @@
           "204": {
             "$ref": "#/components/responses/204"
           },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/400Response"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "message": "Missing symbol"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "500": {
             "$ref": "#/components/responses/500"
           }
-        }
+        },
+        "servers": [
+          {
+            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
+            "description": "AI"
+          }
+        ]
       }
     },
     "/watchlist": {
@@ -163,123 +196,28 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WatchListItem"
-                  }
+                  "$ref": "#/components/schemas/WatchlistResponse"
                 },
                 "examples": {
                   "Example 1": {
-                    "value": [
-                      {
-                        "ChangePercent": -0.8168409,
-                        "Price": 212.49,
-                        "Change": -1.75,
-                        "Volume": 65802837,
-                        "Symbol": "AAPL",
-                        "Name": "Apple"
-                      },
-                      {
-                        "ChangePercent": -0.03282443,
-                        "Price": 30.45,
-                        "Change": -0.0099983215,
-                        "Volume": 26217798,
-                        "Symbol": "INTC",
-                        "Name": "Intel"
-                      },
-                      {
-                        "ChangePercent": -1.212556,
-                        "Price": 193.9,
-                        "Change": -2.380005,
-                        "Volume": 3286353,
-                        "Symbol": "TXN",
-                        "Name": "Intel"
-                      },
-                      {
-                        "ChangePercent": 1.7514113,
-                        "Price": 131.88,
-                        "Change": 2.2700043,
-                        "Volume": 297485100,
-                        "Symbol": "NVDA",
-                        "Name": "NVIDIA"
-                      },
-                      {
-                        "ChangePercent": -0.09247575,
-                        "Price": 183.66,
-                        "Change": -0.16999817,
-                        "Volume": 21388177,
-                        "Symbol": "AMZN",
-                        "Name": "Amazon.com"
-                      },
-                      {
-                        "ChangePercent": 0.22419964,
-                        "Price": 442.57,
-                        "Change": 0.99002075,
-                        "Volume": 12104244,
-                        "Symbol": "MSFT",
-                        "Name": "Microsoft"
-                      }
-                    ]
-                  },
-                  "Example 2": {
-                    "value": [
-                      {
-                        "Price": 63.65,
-                        "Change": -0.26,
-                        "ChangePercent": -0.4068,
-                        "Symbol": "KO",
-                        "Name": "Coca-Cola Co"
-                      },
-                      {
-                        "Price": 115.12,
-                        "Change": 0.22,
-                        "ChangePercent": 0.1915,
-                        "Symbol": "XOM",
-                        "Name": "Exxon Mobil Corp"
-                      },
-                      {
-                        "Price": 452.32,
-                        "Change": 6.36,
-                        "ChangePercent": 1.4261,
-                        "Symbol": "GS",
-                        "Name": "Goldman Sachs Group Inc"
-                      },
-                      {
-                        "Price": 504.22,
-                        "Change": -15.34,
-                        "ChangePercent": -2.9525,
-                        "Symbol": "META",
-                        "Name": "Meta Platforms Inc"
-                      },
-                      {
-                        "Price": 446.95,
-                        "Change": -5.9,
-                        "ChangePercent": -1.3029,
-                        "Symbol": "MSFT",
-                        "Name": "Microsoft Corp"
-                      },
-                      {
-                        "Price": 193.25,
-                        "Change": -4.6,
-                        "ChangePercent": -2.325,
-                        "Symbol": "AMZN",
-                        "Name": "Amazon.com Inc"
-                      }
-                    ]
-                  },
-                  "Example 3": {
-                    "value": [
-                      {
-                        "Price": 19.11,
-                        "Change": 0.36,
-                        "ChangePercent": 1.92,
-                        "Symbol": "T",
-                        "Name": "AT&T Inc"
-                      }
-                    ]
-                  },
-                  "Example 4": {
-                    "value": []
+                    "value": {
+                      "Watchlist": [
+                        {
+                          "Price": 198.47,
+                          "Change": 0.17,
+                          "ChangePercent": 0.0857,
+                          "Symbol": "TXN",
+                          "Name": "Texas Instruments Inc"
+                        },
+                        {
+                          "Price": 22.77,
+                          "Change": 0.33,
+                          "ChangePercent": 1.4706,
+                          "Symbol": "INTC",
+                          "Name": "Intel Corp"
+                        }
+                      ]
+                    }
                   }
                 }
               }
@@ -296,10 +234,33 @@
           "204": {
             "$ref": "#/components/responses/204"
           },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/400Response"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "message": "Missing symbols"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "500": {
             "$ref": "#/components/responses/500"
           }
-        }
+        },
+        "servers": [
+          {
+            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
+            "description": "AI"
+          }
+        ]
       }
     }
   },
@@ -328,12 +289,41 @@
           }
         }
       },
+      "400": {
+        "description": "Missing parameter",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/400Response"
+            },
+            "examples": {
+              "Example 1": {
+                "value": {
+                  "message": "Missing symbol"
+                }
+              },
+              "Example 2": {
+                "value": {
+                  "message": "Missing symbols"
+                }
+              }
+            }
+          }
+        }
+      },
       "500": {
         "description": "Stock server error",
         "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/500Response"
+            },
+            "examples": {
+              "Example 1": {
+                "value": {
+                  "message": "Internal Server Error"
+                }
+              }
             }
           }
         },
@@ -348,6 +338,43 @@
       }
     },
     "schemas": {
+      "QuoteResponse": {
+        "type": "object",
+        "title": "QuoteResponse",
+        "properties": {
+          "Quote": {
+            "$ref": "#/components/schemas/Quote"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "Quote": {
+              "Price": 19.11,
+              "Change": 0.36,
+              "ChangePercent": 1.92,
+              "DayHigh": 19.13,
+              "DayLow": 18.78,
+              "OpenPrice": 18.8,
+              "PreviousClose": 18.75,
+              "Symbol": "T",
+              "Name": "AT&T Inc"
+            }
+          },
+          "Example 2": {
+            "Quote": {
+              "Price": 210.62,
+              "Change": -3.48,
+              "ChangePercent": -1.6254,
+              "DayHigh": 216.07,
+              "DayLow": 210.3,
+              "OpenPrice": 215.805,
+              "PreviousClose": 214.1,
+              "Symbol": "AAPL",
+              "Name": "Apple Inc"
+            }
+          }
+        }
+      },
       "Quote": {
         "type": "object",
         "properties": {
@@ -393,37 +420,72 @@
           }
         }
       },
-      "WatchListItem": {
+      "400Response": {
         "type": "object",
-        "description": "Watch List Item",
+        "title": "400Response",
+        "description": "500 Response",
         "properties": {
-          "Symbol": {
+          "message": {
             "type": "string"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Logo": {
-            "type": "string"
-          },
-          "ChangePercent": {
-            "type": "number"
-          },
-          "Price": {
-            "type": "number"
-          },
-          "Change": {
-            "type": "number"
           }
         },
         "x-examples": {
-          "AAPL": {
-            "Symbol": "AAPL",
-            "Name": "Apple Inc.",
-            "Logo": "https://static2.finnhub.io/file/publicdatany/finnhubimage/stock_logo/AAPL.png",
-            "ChangePercent": -1.1023977,
-            "Price": 211.8783,
-            "Change": -2.3617096
+          "Example 1": {
+            "message": "Missing symbol"
+          },
+          "Example 2": {
+            "message": "Missing symbols"
+          }
+        }
+      },
+      "WatchlistResponse": {
+        "type": "object",
+        "properties": {
+          "Watchlist": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ChangePercent": {
+                  "type": "number"
+                },
+                "Price": {
+                  "type": "number"
+                },
+                "Change": {
+                  "type": "number"
+                },
+                "Volume": {
+                  "type": "integer"
+                },
+                "Name": {
+                  "type": "string"
+                },
+                "Symbol": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "Watchlist": [
+              {
+                "Price": 198.47,
+                "Change": 0.17,
+                "ChangePercent": 0.0857,
+                "Symbol": "TXN",
+                "Name": "Texas Instruments Inc"
+              },
+              {
+                "Price": 22.77,
+                "Change": 0.33,
+                "ChangePercent": 1.4706,
+                "Symbol": "INTC",
+                "Name": "Intel Corp"
+              }
+            ]
           }
         }
       },
@@ -453,7 +515,7 @@
         },
         "x-examples": {
           "Example 1": {
-            "message": "Stock server error"
+            "message": "Internal Server Error"
           }
         }
       }

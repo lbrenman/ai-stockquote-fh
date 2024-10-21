@@ -20,19 +20,26 @@ An OpenAPI 3.0 doc is provided as well
 
 ```json
 {
-  "Price": 212.49,
-  "Change": -1.75,
-  "ChangePercent": -0.8168,
-  "DayHigh": 215.17,
-  "DayLow": 211.3,
-  "OpenPrice": 213.81,
-  "PreviousClose": 214.24,
-  "Symbol": "AAPL",
-  "Name": "Apple Inc"
+    "Quote": {
+        "OpenPrice": 236.18,
+        "DayHigh": 236.18,
+        "DayLow": 234.01,
+        "Price": 235,
+        "Change": 2.85,
+        "ChangePercent": 1.2277,
+        "Name": "Apple Inc",
+        "Symbol": "AAPL"
+    }
 }
 ```
 
-Returns 204 on bad symbol and 500 on Finnhub API call error
+Returns 204 on bad symbol, 400 on missing query parameter and 500 on Finnhub API call error, all with the following schema:
+
+```json
+{
+    "message": "Missing symbol"
+}
+```
 
 ## Watchlist
 
@@ -41,59 +48,47 @@ Returns 204 on bad symbol and 500 on Finnhub API call error
 200 response:
 
 ```json
-[
-  {
-    "Change": -1.75,
-    "ChangePercent": -0.8168,
-    "Price": 212.49,
-    "Symbol": "AAPL",
-    "Name": "Apple Inc"
-  },
-  {
-    "Change": -0.01,
-    "ChangePercent": -0.0328,
-    "Price": 30.45,
-    "Symbol": "INTC",
-    "Name": "Intel Corp"
-  },
-  {
-    "Change": -2.38,
-    "ChangePercent": -1.2126,
-    "Price": 193.9,
-    "Symbol": "TXN",
-    "Name": "Texas Instruments Inc"
-  },
-  {
-    "Change": 2.27,
-    "ChangePercent": 1.7514,
-    "Price": 131.88,
-    "Symbol": "NVDA",
-    "Name": "NVIDIA Corp"
-  },
-  {
-    "Change": -0.17,
-    "ChangePercent": -0.0925,
-    "Price": 183.66,
-    "Symbol": "AMZN",
-    "Name": "Amazon.com Inc"
-  },
-  {
-    "Change": 0.99,
-    "ChangePercent": 0.2242,
-    "Price": 442.57,
-    "Symbol": "MSFT",
-    "Name": "Microsoft Corp"
-  }
-]
+{
+    "Watchlist": [
+        {
+            "Price": 235,
+            "Change": 2.85,
+            "ChangePercent": 1.2277,
+            "Symbol": "AAPL",
+            "Name": "Apple Inc"
+        },
+        {
+            "Price": 198.47,
+            "Change": 0.17,
+            "ChangePercent": 0.0857,
+            "Symbol": "TXN",
+            "Name": "Texas Instruments Inc"
+        },
+        {
+            "Price": 22.77,
+            "Change": 0.33,
+            "ChangePercent": 1.4706,
+            "Symbol": "INTC",
+            "Name": "Intel Corp"
+        }
+    ]
+}
 ```
 
 Bad symbols will not be added to array response
 Returns 204 if all symbols are bad
 Returns 500 on Finnhub API call error
+All with folowing schema:
+
+```json
+{
+    "message": "Missing symbols"
+}
+```
 
 ## Installation
 
-* Import the `StockQuoteFH.zip` project into Amplify Integration
+* Import the `StockQuoteFH2.zip` project into Amplify Integration
 * Edit the Finnhub connector and enter your API Key
   * You can get an API Key [**here**](https://finnhub.io/)
 * Enable your integrations
