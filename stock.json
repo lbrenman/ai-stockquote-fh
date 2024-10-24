@@ -164,8 +164,8 @@
         },
         "servers": [
           {
-            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
-            "description": "AI"
+            "url": "http://localhost:3000",
+            "description": "Local"
           }
         ]
       }
@@ -257,8 +257,8 @@
         },
         "servers": [
           {
-            "url": "https://demo-design.sandbox.ampint.axwaytest.net:9443",
-            "description": "AI"
+            "url": "http://localhost:3000",
+            "description": "Local"
           }
         ]
       }

@@ -8,9 +8,12 @@ The project exposes two end points
 
 The `quote` API is basically a pass through of the Finnhub Stock quote API with a field mapped payload. It takes a single symbol as a query parameter. The `watchlist` API returns an array of stock quotes suitable for a watch list. It takes a comma separated list of symbols.
 
-The project is intended to be a simple example of how to expose API endpoints and map and aggregate data in Amplify Integration using HTTP Server and API Server methods.
+The project is intended to be a simple example of how to expose API endpoints and map and aggregate data in Amplify Integration using three method:
+* HTTP Server - contractless
+* HTTP Server - contractless using a common service
+* API Server - using OAS Doc as starting point and leveraginG same common service
 
-An OpenAPI 3.0 doc is provided as well
+The OpenAPI 3.0 doc is provided in this reposiroty as well
 
 ## Quote
 
@@ -91,5 +94,5 @@ All with folowing schema:
 * Import the `StockQuoteFH2.zip` project into Amplify Integration
 * Edit the Finnhub connector and enter your API Key
   * You can get an API Key [**here**](https://finnhub.io/)
-* Enable your integrations
-* Call your API
+* Enable your HTTP Server integrations and/or API
+* Call your APIs
