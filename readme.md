@@ -91,7 +91,7 @@ All with folowing schema:
 
 ## Installation
 
-* Import the `StockQuoteFH2.zip` project into Amplify Integration
+* Import the `StockQuoteFH.zip` project into Amplify Integration
 * Edit the Finnhub connector and enter your API Key
   * You can get an API Key [**here**](https://finnhub.io/)
 * Enable your HTTP Server integrations and/or API
