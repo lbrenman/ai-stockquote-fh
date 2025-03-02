@@ -8,12 +8,14 @@ The project exposes two end points
 
 The `quote` API is basically a pass through of the Finnhub Stock quote API with a field mapped payload. It takes a single symbol as a query parameter. The `watchlist` API returns an array of stock quotes suitable for a watch list. It takes a comma separated list of symbols.
 
+A sample Nodejs web app that uses the API's can be found [here](https://github.com/lbrenman/Stock-Nodejs-Web-app-to-Fusion-FH-Stock-api)
+
 The project is intended to be a simple example of how to expose API endpoints and map and aggregate data in Amplify Integration using three method:
 * HTTP Server - contractless
 * HTTP Server - contractless using a common service
 * API Server - using OAS Doc as starting point and leveraginG same common service
 
-The OpenAPI 3.0 doc is provided in this reposiroty as well
+The OpenAPI 3.0 doc is provided in this repository as well
 
 ## Quote
 
