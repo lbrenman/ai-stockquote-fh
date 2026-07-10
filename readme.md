@@ -10,6 +10,11 @@ The `quote` API is basically a pass through of the Finnhub Stock quote API with 
 
 A sample Nodejs web app that uses the API's can be found [here](https://github.com/lbrenman/Stock-Nodejs-Web-app-to-Fusion-FH-Stock-api)
 
+Alternatively activate the webapp http server integration and pointo your browser at it to have a web app to check quotes and watch lists
+
+  ![image](images/quote.png)
+  ![image](images/watchlist.png)
+
 The project is intended to be a simple example of how to expose API endpoints and map and aggregate data in Amplify Integration using three method:
 * HTTP Server - contractless
 * HTTP Server - contractless using a common service
